@@ -1,14 +1,47 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
+import PageStat from "./PageStat";
+const HomePage = () => {
+  const [inputValue, setInputValue] = useState("");
+    const navigate  = useNavigate();
 
-export default class HomePage extends Component
-{
-    constructor(props) {
-        super(props);
-    }
+  const handleSubmit = () => {
+    const data = {
+    inputValue: inputValue,
+  };
 
-    render()
-    {
-        return <p>Home</p>
-    }
-}
+  // Send the data to the backend using fetch
+  fetch('http://127.0.0.1:8000/api/find_account', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+    .then(response => response.json())
+.then(data => {
+  if (data.message) {
+    console.log(data.message);
+    navigate('/stat', { state: { data: inputValue.valueOf() + data.message } });
+  } else {
+    console.log('Error: Message field not found in response');
+  }
+})
+
+  };
+
+  return (
+    <div>
+      <p>This is the home page</p>
+      <input
+        type="text"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+      />
+      <button onClick={handleSubmit}>Submit</button>
+    </div>
+  );
+};
+
+export default HomePage;

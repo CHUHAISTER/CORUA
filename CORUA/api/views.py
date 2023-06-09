@@ -8,3 +8,4 @@ from .serializers import RoomSerialisers
 class RoomView(generics.ListAPIView):
     queryset = Room.objects.all()
     serializer_class = RoomSerialisers
+

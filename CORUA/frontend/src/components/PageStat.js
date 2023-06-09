@@ -1,14 +1,16 @@
-import React, { Component } from "react";
+import React from "react";
 
 
-export default class PageStat extends Component
-{
-    constructor(props) {
-        super(props);
-    }
+export const PageStat = (props) =>{
+    const {
+  data = null
+} = props.location?.state || {};
 
-    render()
-    {
-        return <p>Stat</p>
-    }
+    return (<div>
+            <p>This is the stat page</p>
+            <p>{data}</p>
+    </div>
+        );
+
 }
+export default PageStat;
