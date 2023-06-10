@@ -3,6 +3,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+
 }
 
 #main {
@@ -11,6 +12,8 @@ body {
   height: 100%;
   left: 0;
   top: 0;
+
+  overflowY: 'scroll';
 }
 
 #app {

@@ -5,7 +5,7 @@ import PageStat from "./PageStat";
 const HomePage = () => {
   const [inputValue, setInputValue] = useState("");
     const [inputTag, setInputTag] = useState("");
-
+  const [errorHome, setErrorHome] = useState("");
     const navigate  = useNavigate();
 
   const handleSubmit = () => {
@@ -24,12 +24,16 @@ const HomePage = () => {
   })
     .then(response => response.json())
 .then(data => {
-  if (data.message) {
+  if (data.matches) {
     console.log(data.message);
-    navigate('/stat', { state: { data: data.message, maths: data.maths } });
-  } else {
-    console.log('Error: Message field not found in response');
+    navigate('/stat', { state: { data: inputValue, matches: data.matches } });
   }
+  else if (data.error) {
+      console.log('Error:', data.error);
+      setErrorHome(data.error);
+  } else {
+      console.log('Error: Message field not found in response');
+    }
 })
 
   };
@@ -48,6 +52,8 @@ const HomePage = () => {
         onChange={(e) => setInputTag(e.target.value)}
       />
       <button onClick={handleSubmit}>Submit</button>
+      <p>{errorHome}</p>
+        <img src='http://dd.b.pvp.net/4_5_0/core/en_us/img/regions/icon-freljord.png'></img>
     </div>
   );
 };
