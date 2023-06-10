@@ -4,11 +4,14 @@ import { useNavigate } from "react-router-dom";
 import PageStat from "./PageStat";
 const HomePage = () => {
   const [inputValue, setInputValue] = useState("");
+    const [inputTag, setInputTag] = useState("");
+
     const navigate  = useNavigate();
 
   const handleSubmit = () => {
     const data = {
     inputValue: inputValue,
+      inputTag: inputTag,
   };
 
   // Send the data to the backend using fetch
@@ -23,7 +26,7 @@ const HomePage = () => {
 .then(data => {
   if (data.message) {
     console.log(data.message);
-    navigate('/stat', { state: { data: inputValue.valueOf() + data.message } });
+    navigate('/stat', { state: { data: data.message, maths: data.maths } });
   } else {
     console.log('Error: Message field not found in response');
   }
@@ -38,6 +41,11 @@ const HomePage = () => {
         type="text"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
+      />
+      <input
+        type="text"
+        value={inputTag}
+        onChange={(e) => setInputTag(e.target.value)}
       />
       <button onClick={handleSubmit}>Submit</button>
     </div>
