@@ -6,7 +6,6 @@ from .views import  *
 urlpatterns = [
 
     path('find_account', find_account, name='find_account'),
-
     path('keyw', keywordsView.as_view()),
     path('region', RegionView.as_view() ),
     path('vocab',vocabTermLORView.as_view() ),

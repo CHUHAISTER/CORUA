@@ -30,10 +30,11 @@ def find_account(request):
             puuid = req.json()['puuid']
             server = get_server(puuid)
             stat_math = get_matches(puuid, server)
-            response_data = {"matches":stat_math}
+
+            response_data = {"matches":stat_math, "puuid":puuid}
 
         else:
-            response_data = {"error": "puuid not found"}
+            response_data = {"error": "Введи, будь ласка коректні дані:)"}
         return JsonResponse(response_data)
 
 
@@ -62,7 +63,6 @@ def get_matches(puuid, server):
 
                 card_dict = (Card.objects.get(cardCode=card_list[j][1])).__dict__
             except :
-                print(card_list[j][1])
                 card_dict = (Card.objects.get(cardCode="07SI002T2")).__dict__
             card_dict.pop('_state', None)
             card_out.append([card_dict, int(card_list[j][0])])

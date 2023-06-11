@@ -1,0 +1,83 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+}
+.m-1a5qaex {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    border-radius: 100%;
+    border: 1px solid rgb(14, 10, 34);
+    background: linear-gradient(137.64deg, rgb(160, 223, 246) 18.06%, rgba(41, 150, 164, 0) 34.86%, rgba(41, 150, 164, 0) 67.4%, rgb(160, 223, 246) 81.96%), radial-gradient(39.66% 39.66% at 50% 50%, rgb(47, 79, 143) 0%, rgb(41, 70, 129) 57.14%, rgb(9, 127, 149) 96.28%, rgb(45, 165, 183) 100%);
+    box-shadow: rgba(22, 13, 51, 0.8) 0px 0px 6px, rgba(0, 0, 0, 0.5) 0px 0px 3px 1px inset;
+    width: 50px;
+    height: 50px;
+    flex: 0 0 auto;
+    margin-right: 16px;
+    margin-top: 16px;
+}
+
+.m-17kka91 {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 8px;
+    border-radius: 6px;
+    color: rgb(255, 255, 255);
+
+    box-sizing: border-box;
+}
+
+.m-4g0zad {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    border: 1px solid rgb(244, 200, 135);
+    background: rgb(56, 43, 33);
+    box-shadow: rgba(20, 11, 36, 0.6) 0px 0px 4px 0px;
+    white-space: nowrap;
+    border-radius: 3px;
+    color: white;
+    width: 46px;
+    height: 46px;
+}
+.m-toipa6 {
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  flex: 1 1 auto;
+  padding-right: 4px;
+  align-self: flex-start;
+  text-shadow: rgb(0, 0, 0) 0px 1px 3px;
+  letter-spacing: 0.25px;
+    padding-top: 30px;
+    padding-left: 20%;
+}
+.bg-gradient-custom {
+  background: linear-gradient(135deg, #1a8cd6, #9b59b6);
+}
+#main {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+
+  overflowY: 'scroll';
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}

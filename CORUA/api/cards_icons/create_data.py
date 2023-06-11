@@ -154,9 +154,17 @@ def create_support_data():
         create_regions(data)
         create_spell_speeds(data)
         create_rarities(data)
+def create_6sett():
+    with open('F:\\веб\\course_job\\CORUA\\api\\cards_icons\\set6-lite-en_us\\en_us\\data\\set6-en_us.json',
+              encoding='utf-8') as file:
+        data = json.load(file)
+
+        for item in data:
+            card = create_card(item)
+            card.save()
 
 
 #create_support_data()
-create_all_card()
-
+#create_all_card()
+create_6sett()
 #from api.cards_icons.create_data import *
