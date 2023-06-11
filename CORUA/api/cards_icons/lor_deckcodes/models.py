@@ -1,5 +1,5 @@
-from lor_deckcodes.encode import encode_deck
-from lor_deckcodes.decode import decode_deck
+from .encode import encode_deck
+from .decode import decode_deck
 
 
 class CardCodeAndCount:

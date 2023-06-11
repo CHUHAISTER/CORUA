@@ -693,6 +693,9 @@
     {
       "name": "Slow",
       "nameRef": "Slow"
+    },{
+      "name": "",
+      "nameRef": ""
     },
     {
       "name": "Burst",

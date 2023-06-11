@@ -2,11 +2,11 @@ from base64 import b32encode
 from io import BytesIO
 from typing import TYPE_CHECKING, List
 
-from lor_deckcodes.utils import write_varint
-from lor_deckcodes.constants import CURRENT_FORMAT_VERSION, faction_mapping
+from .utils import write_varint
+from .constants import CURRENT_FORMAT_VERSION, faction_mapping
 
 if TYPE_CHECKING:
-    from lor_deckcodes import CardCodeAndCount
+    from .models import CardCodeAndCount
 
 
 def _get_set_faction_combinations(cards: List["CardCodeAndCount"]):
